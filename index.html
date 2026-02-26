@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>舞台・イベント制作 | 担当：廣瀬雅彦</title>
+    <title>舞台・イベント丸投げOK！ | 担当：廣瀬雅彦</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script>
@@ -12,23 +12,49 @@
                 extend: {
                     colors: {
                         brand: {
-                            pink: '#e60064', // 廣瀬さんのTシャツの色をイメージしたアクセントカラー
-                            dark: '#111827',
-                            gray: '#1f2937'
+                            pink: '#e60064', // 廣瀬ピンク
+                            yellow: '#fbbf24', // 元気なイエロー
+                            blue: '#38bdf8', // 爽やかなブルー
+                            dark: '#1e293b', // テキスト・ボーダー用の濃い色
+                            light: '#fffbeb', // 背景用（クリーム色）
                         }
                     },
                     fontFamily: {
-                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        // 親しみやすい丸ゴシックに変更
+                        sans: ['"M PLUS Rounded 1c"', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+        /* 丸ゴシックフォントの読み込み */
+        @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800;900&display=swap');
         
         body {
-            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background-color: #fffbeb; /* クリーム色の背景 */
+            color: #1e293b;
+        }
+
+        /* ポップな影の共通クラス */
+        .pop-shadow {
+            box-shadow: 6px 6px 0px #1e293b;
+        }
+        .pop-shadow-pink {
+            box-shadow: 6px 6px 0px #e60064;
+        }
+        .pop-shadow-yellow {
+            box-shadow: 6px 6px 0px #fbbf24;
+        }
+        .pop-shadow-blue {
+            box-shadow: 6px 6px 0px #38bdf8;
+        }
+
+        /* ボタンのホバーエフェクト */
+        .btn-pop:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 4px 4px 0px #1e293b;
         }
 
         .fade-in {
@@ -36,36 +62,30 @@
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-
         .fade-in.appear {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* 背景の斜めストライプパターン */
-        .bg-pattern {
-            background-image: repeating-linear-gradient(
-                -45deg,
-                rgba(255, 255, 255, 0.02),
-                rgba(255, 255, 255, 0.02) 10px,
-                transparent 10px,
-                transparent 20px
-            );
+        /* 背景のドットパターン（コミカル風） */
+        .bg-dot-pattern {
+            background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
+            background-size: 24px 24px;
         }
     </style>
 </head>
-<body class="bg-brand-dark text-white antialiased">
+<body class="antialiased selection:bg-brand-pink selection:text-white bg-dot-pattern">
 
     <!-- ナビゲーション -->
-    <nav class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-gray-800">
+    <nav class="fixed w-full z-50 bg-white border-b-4 border-brand-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <div class="flex-shrink-0 font-bold text-2xl tracking-wider">
-                    <span class="text-brand-pink">Q</span>M
+                <div class="flex-shrink-0 font-black text-2xl tracking-wider">
+                    <span class="text-brand-pink">Q</span>M <span class="text-sm ml-2 text-gray-500">イベント制作デスク</span>
                 </div>
                 <div class="hidden md:block">
-                    <a href="#contact" class="bg-brand-pink hover:bg-pink-600 text-white px-6 py-2 rounded-full font-bold transition duration-300">
-                        無料相談・お見積り
+                    <a href="#contact" class="bg-brand-yellow border-2 border-brand-dark text-brand-dark px-6 py-2 rounded-full font-bold transition duration-300 pop-shadow btn-pop inline-block">
+                        無料相談はこちら！
                     </a>
                 </div>
             </div>
@@ -73,34 +93,47 @@
     </nav>
 
     <!-- ファーストビュー (Hero Section) -->
-    <section class="relative pt-24 pb-12 md:pt-32 md:pb-24 overflow-hidden bg-pattern">
+    <section class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="flex flex-col-reverse md:flex-row items-center gap-12">
                 <div class="w-full md:w-1/2 text-center md:text-left fade-in">
-                    <span class="inline-block py-1 px-3 rounded-full bg-brand-pink/20 text-brand-pink font-bold text-sm mb-4 border border-brand-pink/50">
-                        舞台・イベント制作のプロフェッショナル集団
-                    </span>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
-                        「舞台・イベント<br>やりたい！」<br>
-                        それ <span class="text-brand-pink">廣瀬</span>にお任せください！
-                    </h1>
-                    <p class="text-lg md:text-xl text-gray-300 mb-8 font-medium">
-                        あなたのビジョンを形にします<br>
-                        豊富な自社機材と確かな演出力で 企画から運営まで「丸投げ」OK！
+                    
+                    <!-- 吹き出し風キャッチ -->
+                    <div class="relative inline-block mb-6">
+                        <div class="bg-white border-4 border-brand-dark rounded-3xl p-4 pop-shadow-pink relative z-10">
+                            <h1 class="text-3xl md:text-5xl lg:text-6xl font-black leading-tight">
+                                「舞台・イベント<br>やりたい！」<br>
+                                それ <span class="text-brand-pink text-5xl md:text-7xl">廣瀬</span> に<br>お任せください！
+                            </h1>
+                        </div>
+                        <!-- 吹き出しのしっぽ -->
+                        <div class="absolute -bottom-4 left-10 w-8 h-8 bg-white border-r-4 border-b-4 border-brand-dark transform rotate-45 z-0"></div>
+                    </div>
+
+                    <p class="text-xl md:text-2xl font-bold mt-8 mb-8 bg-brand-yellow inline-block px-4 py-2 border-2 border-brand-dark transform -rotate-2">
+                        企画から運営まで「丸投げ」OK！
                     </p>
-                    <a href="#contact" class="inline-block bg-brand-pink hover:bg-pink-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-[0_0_20px_rgba(230,0,100,0.4)] hover:shadow-[0_0_30px_rgba(230,0,100,0.6)] transition duration-300 transform hover:-translate-y-1">
-                        まずはイベントのプロに相談する <i class="fas fa-arrow-right ml-2"></i>
+                    <p class="text-lg text-gray-700 font-bold mb-8">
+                        初めてでも大丈夫！豊富な自社機材と確かな演出力で<br>
+                        あなたのビジョンを楽しく、確実に形にします！
+                    </p>
+                    
+                    <a href="#contact" class="inline-block bg-brand-pink border-4 border-brand-dark text-white px-8 py-4 rounded-full font-black text-xl pop-shadow btn-pop transition duration-300">
+                        プロに丸投げ相談してみる <i class="fas fa-comment-dots ml-2"></i>
                     </a>
                 </div>
                 
                 <div class="w-full md:w-1/2 relative fade-in">
-                    <!-- 廣瀬さんの写真を配置する場所 -->
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-800">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent z-10"></div>
+                    <!-- 廣瀬さんの写真をポップに配置 -->
+                    <div class="relative rounded-[3rem] overflow-hidden border-8 border-brand-dark pop-shadow bg-white transform rotate-2 hover:rotate-0 transition duration-300">
                         <img src="hirose.jpg" alt="" class="w-full h-auto object-cover">
-                        <div class="absolute bottom-6 left-6 z-20">
-                            <p class="text-3xl font-black drop-shadow-lg">廣瀬 雅彦</p>
-                            <p class="text-brand-pink font-bold text-lg drop-shadow-lg">舞台監督 / テクニカルディレクター</p>
+                        <!-- 装飾バッジ -->
+                        <div class="absolute -top-4 -right-4 bg-brand-yellow text-brand-dark font-black border-4 border-brand-dark rounded-full w-24 h-24 flex items-center justify-center transform rotate-12 pop-shadow">
+                            現場の<br>プロ！
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur border-4 border-brand-dark rounded-2xl p-4 text-center">
+                            <p class="text-2xl font-black text-brand-dark">廣瀬 雅彦</p>
+                            <p class="text-brand-pink font-bold text-sm">舞台監督 / テクニカルディレクター</p>
                         </div>
                     </div>
                 </div>
@@ -109,99 +142,108 @@
     </section>
 
     <!-- お悩みセクション -->
-    <section class="py-20 bg-brand-gray relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">こんなお悩み 抱えていませんか？</h2>
-                <div class="w-20 h-1 bg-brand-pink mx-auto"></div>
+    <section class="py-20 bg-brand-blue/10 border-y-4 border-brand-dark relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in relative">
+                <span class="bg-brand-blue text-white px-4 py-1 rounded-full font-bold border-2 border-brand-dark inline-block mb-4 transform -rotate-2">SOS</span>
+                <h2 class="text-3xl md:text-5xl font-black mb-4">こんなお悩み 抱えていませんか？</h2>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
                 <!-- 悩み1 -->
-                <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 flex items-start gap-4 border-l-4 border-l-brand-pink">
-                    <div class="text-brand-pink text-3xl mt-1"><i class="fas fa-question-circle"></i></div>
+                <div class="bg-white p-8 rounded-3xl border-4 border-brand-dark pop-shadow flex items-start gap-4 transform hover:-translate-y-2 transition duration-300">
+                    <div class="text-brand-pink text-4xl mt-1"><i class="fas fa-dizzy"></i></div>
                     <div>
-                        <h3 class="font-bold text-xl mb-2">何から手をつければ…？</h3>
-                        <p class="text-gray-400 font-bold">イベントや劇団をやりたい！でも 会場？企画？キャスト？台本？まったくわからない！</p>
+                        <h3 class="font-black text-xl mb-3 text-brand-dark border-b-2 border-dashed border-gray-300 pb-2">何から手をつければ…？</h3>
+                        <p class="text-gray-700 font-bold leading-relaxed">イベントや劇団をやりたい！でも 会場？企画？キャスト？台本？<span class="bg-yellow-200 px-1">まったくわからない！</span></p>
                     </div>
                 </div>
                 <!-- 悩み2 -->
-                <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 flex items-start gap-4">
-                    <div class="text-brand-pink text-3xl mt-1"><i class="fas fa-meh-blank"></i></div>
+                <div class="bg-white p-8 rounded-3xl border-4 border-brand-dark pop-shadow flex items-start gap-4 transform hover:-translate-y-2 transition duration-300">
+                    <div class="text-brand-blue text-4xl mt-1"><i class="fas fa-meh"></i></div>
                     <div>
-                        <h3 class="font-bold text-xl mb-2">マンネリ化している</h3>
-                        <p class="text-gray-400">今までイベントを企画してきたが 毎回似たような内容になってしまい 新しい刺激や演出が欲しい</p>
+                        <h3 class="font-black text-xl mb-3 text-brand-dark border-b-2 border-dashed border-gray-300 pb-2">マンネリ化している</h3>
+                        <p class="text-gray-700 font-bold leading-relaxed">今までイベントを企画してきたが 毎回似たような内容に… <span class="bg-yellow-200 px-1">新しい刺激や演出</span>が欲しい！</p>
                     </div>
                 </div>
                 <!-- 悩み3 -->
-                <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 flex items-start gap-4">
-                    <div class="text-brand-pink text-3xl mt-1"><i class="fas fa-building"></i></div>
+                <div class="bg-white p-8 rounded-3xl border-4 border-brand-dark pop-shadow flex items-start gap-4 transform hover:-translate-y-2 transition duration-300">
+                    <div class="text-brand-yellow text-4xl mt-1"><i class="fas fa-search"></i></div>
                     <div>
-                        <h3 class="font-bold text-xl mb-2">専用の小屋付を探している</h3>
-                        <p class="text-gray-400">各劇場で安全管理や機材管理を任せられる 専属の「小屋付」舞台監督が欲しい</p>
+                        <h3 class="font-black text-xl mb-3 text-brand-dark border-b-2 border-dashed border-gray-300 pb-2">専用の小屋付を探している</h3>
+                        <p class="text-gray-700 font-bold leading-relaxed">各劇場で安全管理や機材管理を安心して任せられる <span class="bg-yellow-200 px-1">専属の「小屋付」舞台監督</span>が欲しい</p>
                     </div>
                 </div>
                 <!-- 悩み4 -->
-                <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 flex items-start gap-4">
-                    <div class="text-brand-pink text-3xl mt-1"><i class="fas fa-hands-helping"></i></div>
+                <div class="bg-white p-8 rounded-3xl border-4 border-brand-dark pop-shadow flex items-start gap-4 transform hover:-translate-y-2 transition duration-300">
+                    <div class="text-brand-pink text-4xl mt-1"><i class="fas fa-praying-hands"></i></div>
                     <div>
-                        <h3 class="font-bold text-xl mb-2">とにかくプロに任せたい</h3>
-                        <p class="text-gray-400">進行や設営など どこに問い合わせていいか迷子になっている 安全かつ確実に成功させたい</p>
+                        <h3 class="font-black text-xl mb-3 text-brand-dark border-b-2 border-dashed border-gray-300 pb-2">とにかくプロに任せたい</h3>
+                        <p class="text-gray-700 font-bold leading-relaxed">進行や設営など どこに問い合わせていいか迷子。<span class="bg-yellow-200 px-1">安全かつ確実に成功させたい！</span></p>
                     </div>
                 </div>
+            </div>
+
+            <!-- 解決への矢印 -->
+            <div class="text-center mt-12 fade-in">
+                <i class="fas fa-arrow-down text-5xl text-brand-pink animate-bounce"></i>
+                <p class="text-2xl font-black mt-2">そのお悩み、全部まるっと引き受けます！</p>
             </div>
         </div>
     </section>
 
     <!-- 解決策・強み -->
-    <section class="py-24 bg-brand-dark bg-pattern">
+    <section class="py-24 bg-brand-yellow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in">
-                <p class="text-brand-pink font-bold text-xl mb-2">面倒な手配も 専門知識も不要！</p>
-                <h2 class="text-4xl md:text-5xl font-black mb-6">なぜ廣瀬が選ばれるのか？</h2>
+                <span class="bg-white text-brand-dark px-6 py-2 rounded-full font-black border-4 border-brand-dark pop-shadow inline-block mb-6 transform rotate-2">面倒な手配も 専門知識も不要！</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black">なぜ廣瀬が選ばれるのか？</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <!-- 理由1 -->
-                <div class="bg-gray-800 rounded-2xl p-8 border-t-4 border-brand-pink hover:-translate-y-2 transition duration-300 fade-in flex flex-col">
-                    <div class="bg-brand-dark w-16 h-16 rounded-full flex items-center justify-center text-3xl text-brand-pink mb-6 shadow-lg">
-                        <i class="fas fa-lightbulb"></i>
+                <div class="bg-white rounded-3xl p-8 border-4 border-brand-dark pop-shadow fade-in flex flex-col relative">
+                    <div class="absolute -top-6 -left-6 bg-brand-pink text-white w-16 h-16 rounded-full flex items-center justify-center font-black text-2xl border-4 border-brand-dark pop-shadow transform -rotate-12">1</div>
+                    <div class="text-center mb-4 mt-4">
+                        <i class="fas fa-lightbulb text-5xl text-brand-yellow"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">企画・演出から「丸投げ」OK</h3>
-                    <div class="w-full h-32 mb-4 rounded-lg overflow-hidden">
+                    <h3 class="text-2xl font-black mb-4 text-center">企画・演出から<br>「丸投げ」OK</h3>
+                    <div class="w-full h-40 mb-4 rounded-2xl overflow-hidden border-4 border-brand-dark">
                         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="" class="w-full h-full object-cover">
                     </div>
-                    <p class="text-gray-300 mt-auto">
-                        「こんなイベントにしたい」というフワッとしたアイデアだけで大丈夫 イベント制作の総合力を活かし 演出プランニングから大道具・小道具の手配 当日の進行まで すべてワンストップでお引き受けします
+                    <p class="text-gray-700 font-bold mt-auto leading-relaxed">
+                        「こんなイベントにしたい」というフワッとしたアイデアだけで大丈夫！演出プランニングから大道具・小道具の手配、当日の進行まで、すべてワンストップでお引き受けします。
                     </p>
                 </div>
 
-                <!-- 理由2 (機材の豊富さをアピール) -->
-                <div class="bg-gray-800 rounded-2xl p-8 border-t-4 border-brand-pink hover:-translate-y-2 transition duration-300 fade-in flex flex-col" style="transition-delay: 100ms;">
-                    <div class="bg-brand-dark w-16 h-16 rounded-full flex items-center justify-center text-3xl text-brand-pink mb-6 shadow-lg">
-                        <i class="fas fa-boxes"></i>
+                <!-- 理由2 -->
+                <div class="bg-white rounded-3xl p-8 border-4 border-brand-dark pop-shadow fade-in flex flex-col relative" style="transition-delay: 100ms;">
+                    <div class="absolute -top-6 -left-6 bg-brand-blue text-white w-16 h-16 rounded-full flex items-center justify-center font-black text-2xl border-4 border-brand-dark pop-shadow transform -rotate-12">2</div>
+                    <div class="text-center mb-4 mt-4">
+                        <i class="fas fa-boxes text-5xl text-brand-pink"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">圧倒的な自社機材保有量</h3>
-                    <div class="w-full h-32 mb-4 rounded-lg overflow-hidden">
+                    <h3 class="text-2xl font-black mb-4 text-center">圧倒的な<br>自社機材保有量</h3>
+                    <div class="w-full h-40 mb-4 rounded-2xl overflow-hidden border-4 border-brand-dark">
                         <img src="https://images.unsplash.com/photo-1621619856624-42fd193a0661?auto=format&fit=crop&q=80&w=800" alt="" class="w-full h-full object-cover">
                     </div>
-                    <p class="text-gray-300 mt-auto">
-                        最大の強みは豊富な自社機材 外部レンタルに頼らないため 大幅なコストダウンとスピーディーな手配が可能 現場での急な演出変更やトラブルにも 自社機材で即座にリカバリーする柔軟性を持っています
+                    <p class="text-gray-700 font-bold mt-auto leading-relaxed">
+                        最大の強みは豊富な自社機材！外部レンタルに頼らないため大幅なコストダウンとスピーディーな手配が可能。現場での急な演出変更やトラブルにも柔軟に対応します。
                     </p>
                 </div>
 
                 <!-- 理由3 -->
-                <div class="bg-gray-800 rounded-2xl p-8 border-t-4 border-brand-pink hover:-translate-y-2 transition duration-300 fade-in flex flex-col" style="transition-delay: 200ms;">
-                    <div class="bg-brand-dark w-16 h-16 rounded-full flex items-center justify-center text-3xl text-brand-pink mb-6 shadow-lg">
-                        <i class="fas fa-globe"></i>
+                <div class="bg-white rounded-3xl p-8 border-4 border-brand-dark pop-shadow fade-in flex flex-col relative" style="transition-delay: 200ms;">
+                    <div class="absolute -top-6 -left-6 bg-brand-pink text-white w-16 h-16 rounded-full flex items-center justify-center font-black text-2xl border-4 border-brand-dark pop-shadow transform -rotate-12">3</div>
+                    <div class="text-center mb-4 mt-4">
+                        <i class="fas fa-globe-americas text-5xl text-brand-blue"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">世界を知る圧倒的な現場力</h3>
-                    <div class="w-full h-32 mb-4 rounded-lg overflow-hidden">
+                    <h3 class="text-2xl font-black mb-4 text-center">世界を知る<br>圧倒的な現場力</h3>
+                    <div class="w-full h-40 mb-4 rounded-2xl overflow-hidden border-4 border-brand-dark">
                         <img src="https://images.unsplash.com/photo-1543807535-eceef0bc6599?auto=format&fit=crop&q=80&w=800" alt="" class="w-full h-full object-cover">
                     </div>
-                    <p class="text-gray-300 mt-auto">
-                        <span class="text-brand-pink font-bold border-b border-brand-pink pb-1 mb-2 inline-block">ラスベガス公演やあのマッスルミュージカルなども手掛けた舞台監督だからです</span><br><br>
-                        数々の大規模舞台や海外公演を成功に導いてきた廣瀬が あなたのプロジェクトの専属窓口となります その圧倒的な経験値が 最高品質のイベントを保証します
+                    <p class="text-gray-700 font-bold mt-auto leading-relaxed">
+                        <span class="bg-yellow-200 px-1">ラスベガス公演やあのマッスルミュージカル等も手掛けた舞台監督だからです！</span><br>
+                        数々の大規模舞台や海外公演を成功に導いてきた経験値で、最高品質のイベントを保証します。
                     </p>
                 </div>
             </div>
@@ -209,143 +251,105 @@
     </section>
 
     <!-- サービス内容 -->
-    <section class="py-20 bg-brand-gray">
+    <section class="py-20 bg-white border-b-4 border-brand-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">対応サービス一覧</h2>
-                <div class="w-20 h-1 bg-brand-pink mx-auto mb-8"></div>
-                <p class="text-gray-300">企画・演出から当日の運営まで フルサポートします</p>
+                <h2 class="text-3xl md:text-5xl font-black mb-4">対応サービス一覧</h2>
+                <p class="text-lg font-bold text-gray-600">企画・演出から当日の運営まで、フルサポートします！</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-5 gap-4 fade-in">
-                <div class="bg-brand-dark p-6 rounded-lg text-center border border-gray-700 hover:border-brand-pink transition">
-                    <i class="fas fa-star text-4xl text-brand-pink mb-4"></i>
-                    <h4 class="font-bold mb-2">企画・演出</h4>
-                    <p class="text-sm text-gray-400">コンセプト立案 演出プラン 台本作成サポート</p>
+                <div class="bg-brand-light p-6 rounded-2xl text-center border-4 border-brand-dark pop-shadow-yellow hover:-translate-y-1 transition">
+                    <i class="fas fa-star text-4xl text-brand-yellow mb-4"></i>
+                    <h4 class="font-black mb-2">企画・演出</h4>
+                    <p class="text-xs font-bold text-gray-600">コンセプト立案<br>演出プラン作成</p>
                 </div>
-                <div class="bg-brand-dark p-6 rounded-lg text-center border border-gray-700 hover:border-brand-pink transition">
-                    <i class="fas fa-clipboard-list text-4xl text-brand-pink mb-4"></i>
-                    <h4 class="font-bold mb-2">進行・舞台監督</h4>
-                    <p class="text-sm text-gray-400">タイムテーブル作成 キュー出し 全体指揮</p>
+                <div class="bg-brand-light p-6 rounded-2xl text-center border-4 border-brand-dark pop-shadow-blue hover:-translate-y-1 transition">
+                    <i class="fas fa-clipboard-list text-4xl text-brand-blue mb-4"></i>
+                    <h4 class="font-black mb-2">進行・舞台監督</h4>
+                    <p class="text-xs font-bold text-gray-600">タイムテーブル<br>全体指揮</p>
                 </div>
-                <div class="bg-brand-dark p-6 rounded-lg text-center border border-gray-700 hover:border-brand-pink transition">
+                <div class="bg-brand-light p-6 rounded-2xl text-center border-4 border-brand-dark pop-shadow-pink hover:-translate-y-1 transition">
                     <i class="fas fa-hammer text-4xl text-brand-pink mb-4"></i>
-                    <h4 class="font-bold mb-2">大道具・美術</h4>
-                    <p class="text-sm text-gray-400">セット製作 建て込み 転換作業</p>
+                    <h4 class="font-black mb-2">大道具・美術</h4>
+                    <p class="text-xs font-bold text-gray-600">セット製作<br>建て込み・転換</p>
                 </div>
-                <div class="bg-brand-dark p-6 rounded-lg text-center border border-gray-700 hover:border-brand-pink transition">
-                    <i class="fas fa-magic text-4xl text-brand-pink mb-4"></i>
-                    <h4 class="font-bold mb-2">小道具・機材手配</h4>
-                    <p class="text-sm text-gray-400">豊富な自社機材の提供 必要アイテムの調達</p>
+                <div class="bg-brand-light p-6 rounded-2xl text-center border-4 border-brand-dark pop-shadow-yellow hover:-translate-y-1 transition">
+                    <i class="fas fa-magic text-4xl text-brand-yellow mb-4"></i>
+                    <h4 class="font-black mb-2">小道具・機材</h4>
+                    <p class="text-xs font-bold text-gray-600">自社機材提供<br>アイテム調達</p>
                 </div>
-                <div class="bg-brand-dark p-6 rounded-lg text-center border border-gray-700 hover:border-brand-pink transition col-span-2 md:col-span-1">
-                    <i class="fas fa-users-cog text-4xl text-brand-pink mb-4"></i>
-                    <h4 class="font-bold mb-2">イベント運営・小屋付</h4>
-                    <p class="text-sm text-gray-400">人員配置 劇場管理 コンサルティング</p>
+                <div class="bg-brand-light p-6 rounded-2xl text-center border-4 border-brand-dark pop-shadow-blue hover:-translate-y-1 transition col-span-2 md:col-span-1">
+                    <i class="fas fa-users-cog text-4xl text-brand-blue mb-4"></i>
+                    <h4 class="font-black mb-2">運営・小屋付</h4>
+                    <p class="text-xs font-bold text-gray-600">人員配置<br>劇場管理</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 実績 (WORKS) セクション -->
-    <section class="py-24 bg-brand-dark">
+    <section class="py-24 bg-brand-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in">
-                <p class="text-brand-pink font-bold text-xl mb-2">WORKS</p>
+                <span class="inline-block bg-brand-pink text-white px-6 py-2 rounded-full font-black text-xl border-4 border-brand-dark mb-4 transform -rotate-3 pop-shadow">WORKS</span>
                 <h2 class="text-4xl md:text-5xl font-black mb-6">主要実績</h2>
-                <div class="w-20 h-1 bg-brand-pink mx-auto mb-8"></div>
-                <p class="text-gray-300">大規模ミュージカル キッズコンサートから海外公演まで<br class="hidden md:block">多岐にわたる現場を確かな技術で支え続けています</p>
+                <p class="text-lg font-bold text-gray-700">キッズコンサートから海外公演まで、多岐にわたる現場を支えています！</p>
             </div>
 
+            <!-- 実績はカードデザインでポップに -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 舞台・ミュージカル・ショー -->
-                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden fade-in hover:border-brand-pink transition duration-300 flex flex-col">
-                    <div class="h-48 w-full">
+                <!-- 舞台・ミュージカル -->
+                <div class="bg-white rounded-3xl border-4 border-brand-dark overflow-hidden fade-in pop-shadow flex flex-col">
+                    <div class="h-48 w-full border-b-4 border-brand-dark">
                         <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=800" alt="" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-8 flex-grow">
-                        <h3 class="text-xl font-bold mb-6 flex items-center gap-3 border-b border-gray-700 pb-3">
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-black mb-4 flex items-center gap-2">
                             <i class="fas fa-theater-masks text-brand-pink"></i> 舞台・ミュージカル
                         </h3>
-                        <ul class="space-y-4 text-gray-300 text-sm">
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>忍たま乱太郎 ミュージカル</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>マッスルミュージカル <span class="text-xs text-brand-pink border border-brand-pink px-2 py-0.5 rounded ml-1">海外公演</span></span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>SRO サムライロックオーケストラ <span class="text-xs text-brand-pink border border-brand-pink px-2 py-0.5 rounded ml-1">海外公演</span></span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>中村ジャパン <span class="text-xs text-brand-pink border border-brand-pink px-2 py-0.5 rounded ml-1">海外公演</span></span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>宮西達也 ミラクルワールド</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>戸田市市民ミュージカル (2018〜2019)</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>ミュージカル座</span></li>
+                        <ul class="space-y-3 text-gray-700 font-bold text-sm">
+                            <li><i class="fas fa-caret-right text-brand-pink"></i> 忍たま乱太郎 ミュージカル</li>
+                            <li><i class="fas fa-caret-right text-brand-pink"></i> マッスルミュージカル <span class="bg-yellow-200 text-xs px-2 py-1 rounded-full border-2 border-brand-dark">海外</span></li>
+                            <li><i class="fas fa-caret-right text-brand-pink"></i> SRO サムライロックオーケストラ <span class="bg-yellow-200 text-xs px-2 py-1 rounded-full border-2 border-brand-dark">海外</span></li>
+                            <li><i class="fas fa-caret-right text-brand-pink"></i> 中村ジャパン <span class="bg-yellow-200 text-xs px-2 py-1 rounded-full border-2 border-brand-dark">海外</span></li>
+                            <li><i class="fas fa-caret-right text-brand-pink"></i> 戸田市市民ミュージカル 等</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- ファミリー・キッズイベント -->
-                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden fade-in hover:border-brand-pink transition duration-300 flex flex-col" style="transition-delay: 100ms;">
-                    <div class="h-48 w-full">
+                <!-- ファミリー・キッズ -->
+                <div class="bg-white rounded-3xl border-4 border-brand-dark overflow-hidden fade-in pop-shadow flex flex-col" style="transition-delay: 100ms;">
+                    <div class="h-48 w-full border-b-4 border-brand-dark">
                         <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=800" alt="" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-8 flex-grow">
-                        <h3 class="text-xl font-bold mb-6 flex items-center gap-3 border-b border-gray-700 pb-3">
-                            <i class="fas fa-child text-brand-pink"></i> ファミリー・キッズ
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-black mb-4 flex items-center gap-2">
+                            <i class="fas fa-child text-brand-blue"></i> ファミリー・キッズ
                         </h3>
-                        <ul class="space-y-4 text-gray-300 text-sm">
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>しまじろう summer 英語コンサート<br><span class="text-xs text-gray-500">(2018〜2025)</span></span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>しまじろう クリスマス 英語コンサート<br><span class="text-xs text-gray-500">(2018〜2025)</span></span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>しまじろう クリスマスコンサート<br><span class="text-xs text-gray-500">(2018〜2024)</span></span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>しまじろう お正月 ラグーナテンボス<br><span class="text-xs text-gray-500">(2024)</span></span></li>
+                        <ul class="space-y-3 text-gray-700 font-bold text-sm">
+                            <li><i class="fas fa-caret-right text-brand-blue"></i> しまじろう summer 英語コンサート</li>
+                            <li><i class="fas fa-caret-right text-brand-blue"></i> しまじろう クリスマス 英語コンサート</li>
+                            <li><i class="fas fa-caret-right text-brand-blue"></i> しまじろう クリスマスコンサート</li>
+                            <li><i class="fas fa-caret-right text-brand-blue"></i> しまじろう お正月 ラグーナテンボス</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 劇団・プロデュース公演 -->
-                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden fade-in hover:border-brand-pink transition duration-300 flex flex-col" style="transition-delay: 200ms;">
-                    <div class="h-48 w-full">
-                        <img src="https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?auto=format&fit=crop&q=80&w=800" alt="" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-8 flex-grow">
-                        <h3 class="text-xl font-bold mb-6 flex items-center gap-3 border-b border-gray-700 pb-3">
-                            <i class="fas fa-users text-brand-pink"></i> 劇団・プロデュース
-                        </h3>
-                        <ul class="space-y-4 text-gray-300 text-sm">
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>劇団キャットミント<br><span class="text-xs text-gray-500">(2017〜2025)</span></span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>東京ジャンクZ</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>甘党プロデュース</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- コンサート・音楽 -->
-                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden fade-in hover:border-brand-pink transition duration-300 flex flex-col">
-                    <div class="h-48 w-full">
-                        <img src="https://images.unsplash.com/photo-1540039155732-6761b54f228a?auto=format&fit=crop&q=80&w=800" alt="" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-8 flex-grow">
-                        <h3 class="text-xl font-bold mb-6 flex items-center gap-3 border-b border-gray-700 pb-3">
-                            <i class="fas fa-guitar text-brand-pink"></i> コンサート・音楽
-                        </h3>
-                        <ul class="space-y-4 text-gray-300 text-sm">
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>民音コンサート</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>GFRENDS</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>新選組リアン</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>松山あおい</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- イベント・公共事業 -->
-                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden fade-in hover:border-brand-pink transition duration-300 flex flex-col" style="transition-delay: 100ms;">
-                    <div class="h-48 w-full">
+                <!-- その他（劇団・コンサート・イベント等まとめ） -->
+                <div class="bg-white rounded-3xl border-4 border-brand-dark overflow-hidden fade-in pop-shadow flex flex-col" style="transition-delay: 200ms;">
+                    <div class="h-48 w-full border-b-4 border-brand-dark">
                         <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800" alt="" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-8 flex-grow">
-                        <h3 class="text-xl font-bold mb-6 flex items-center gap-3 border-b border-gray-700 pb-3">
-                            <i class="fas fa-microphone-alt text-brand-pink"></i> イベント・その他
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-black mb-4 flex items-center gap-2">
+                            <i class="fas fa-music text-brand-yellow"></i> 音楽・劇団・イベント
                         </h3>
-                        <ul class="space-y-4 text-gray-300 text-sm">
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>警視庁 特殊詐欺イベント<br><span class="text-xs text-gray-500">(2016〜2018)</span></span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>関東大学ダンス連盟Σ<br><span class="text-xs text-gray-500">(2006〜2025)</span></span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>埼玉芸術劇場 回遊</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-brand-pink mt-1"></i> <span>埼玉芸術劇場 新世界</span></li>
+                        <ul class="space-y-3 text-gray-700 font-bold text-sm">
+                            <li><i class="fas fa-caret-right text-brand-yellow"></i> 民音コンサート / GFRENDS</li>
+                            <li><i class="fas fa-caret-right text-brand-yellow"></i> 劇団キャットミント / 東京ジャンクZ</li>
+                            <li><i class="fas fa-caret-right text-brand-yellow"></i> 警視庁 特殊詐欺イベント</li>
+                            <li><i class="fas fa-caret-right text-brand-yellow"></i> 埼玉芸術劇場 回遊 / 新世界</li>
                         </ul>
                     </div>
                 </div>
@@ -354,59 +358,46 @@
     </section>
 
     <!-- よくある質問 (FAQ) -->
-    <section class="py-20 bg-brand-gray relative">
+    <section class="py-20 bg-brand-blue/10 border-y-4 border-brand-dark">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">よくあるご質問 (Q&A)</h2>
-                <div class="w-20 h-1 bg-brand-pink mx-auto mb-8"></div>
+                <h2 class="text-3xl md:text-5xl font-black mb-4">よくあるご質問 (Q&A)</h2>
             </div>
 
             <div class="space-y-6 fade-in">
                 <!-- Q1 -->
-                <div class="bg-brand-dark rounded-xl border border-gray-700 p-6">
-                    <h4 class="text-lg font-bold mb-3 flex items-start gap-3">
-                        <span class="text-brand-pink font-black text-xl">Q.</span>
-                        初めてのイベント開催で 何から手をつければいいかわかりません
+                <div class="bg-white rounded-3xl border-4 border-brand-dark p-6 pop-shadow">
+                    <h4 class="text-lg md:text-xl font-black mb-3 flex items-start gap-3">
+                        <span class="bg-brand-pink text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 border-2 border-brand-dark">Q</span>
+                        初めてのイベント開催で 何から手をつければいいかわかりません！
                     </h4>
-                    <p class="text-gray-300 pl-8 border-l-2 border-gray-700 ml-2">
-                        <span class="text-gray-500 font-bold mr-2">A.</span>
-                        ご安心ください 「こんなことをやりたい」というアイデアの段階からご相談に乗ります 企画・演出の提案から 必要な機材・スタッフの手配 当日の進行まで イベント制作としてすべて「丸投げ」でお任せいただけます
+                    <p class="text-gray-700 font-bold pl-11">
+                        <span class="text-brand-blue font-black mr-2">A.</span>
+                        ご安心ください！「こんなことをやりたい」というアイデアの段階からご相談に乗ります。企画・演出の提案から必要な機材の手配、当日の進行まで、すべて「丸投げ」でお任せいただけます！
                     </p>
                 </div>
                 
                 <!-- Q2 -->
-                <div class="bg-brand-dark rounded-xl border border-gray-700 p-6">
-                    <h4 class="text-lg font-bold mb-3 flex items-start gap-3">
-                        <span class="text-brand-pink font-black text-xl">Q.</span>
+                <div class="bg-white rounded-3xl border-4 border-brand-dark p-6 pop-shadow">
+                    <h4 class="text-lg md:text-xl font-black mb-3 flex items-start gap-3">
+                        <span class="bg-brand-pink text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 border-2 border-brand-dark">Q</span>
                         音響や照明などの「演出」についても提案してもらえますか？
                     </h4>
-                    <p class="text-gray-300 pl-8 border-l-2 border-gray-700 ml-2">
-                        <span class="text-gray-500 font-bold mr-2">A.</span>
-                        もちろんです 舞台監督としての進行管理だけでなく イベントを魅力的に見せるための演出プランニングも得意としております 豊富な自社機材を活用し 予算内で最大限の効果を発揮する演出をご提案します
+                    <p class="text-gray-700 font-bold pl-11">
+                        <span class="text-brand-blue font-black mr-2">A.</span>
+                        もちろんです！舞台監督としての進行管理だけでなく、イベントを魅力的に見せる演出プランニングも得意です。豊富な自社機材を活用し、予算内で最大の効果を発揮する演出をご提案します。
                     </p>
                 </div>
 
                 <!-- Q3 -->
-                <div class="bg-brand-dark rounded-xl border border-gray-700 p-6">
-                    <h4 class="text-lg font-bold mb-3 flex items-start gap-3">
-                        <span class="text-brand-pink font-black text-xl">Q.</span>
-                        自社機材が豊富とのことですが 具体的にどんなメリットがありますか？
-                    </h4>
-                    <p class="text-gray-300 pl-8 border-l-2 border-gray-700 ml-2">
-                        <span class="text-gray-500 font-bold mr-2">A.</span>
-                        機材を外部のレンタル会社から借りる必要がないため 大幅な「コスト削減」が可能です また 手配のタイムラグがないため 直前の変更やトラブルにも即座に対応できる「柔軟性」と「スピード」が大きなメリットです
-                    </p>
-                </div>
-
-                <!-- Q4 -->
-                <div class="bg-brand-dark rounded-xl border border-gray-700 p-6">
-                    <h4 class="text-lg font-bold mb-3 flex items-start gap-3">
-                        <span class="text-brand-pink font-black text-xl">Q.</span>
+                <div class="bg-white rounded-3xl border-4 border-brand-dark p-6 pop-shadow">
+                    <h4 class="text-lg md:text-xl font-black mb-3 flex items-start gap-3">
+                        <span class="bg-brand-pink text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 border-2 border-brand-dark">Q</span>
                         予算が限られているのですが 相談に乗ってもらえますか？
                     </h4>
-                    <p class="text-gray-300 pl-8 border-l-2 border-gray-700 ml-2">
-                        <span class="text-gray-500 font-bold mr-2">A.</span>
-                        はい 大歓迎です 決まったご予算の中で 自社機材を活用してどのように工夫すれば最高のステージが作れるか プロの目線で最適なプランを構築・ご提案させていただきます まずは無料相談からお問い合わせください
+                    <p class="text-gray-700 font-bold pl-11">
+                        <span class="text-brand-blue font-black mr-2">A.</span>
+                        はい、大歓迎です！決まったご予算の中で、自社機材を活用してどのように工夫すれば最高のステージが作れるか、プロの目線で最適なプランをご提案させていただきます。
                     </p>
                 </div>
             </div>
@@ -414,47 +405,42 @@
     </section>
 
     <!-- メッセージ / CTA -->
-    <section id="contact" class="py-24 relative overflow-hidden">
-        <!-- 背景画像 -->
-        <div class="absolute inset-0 z-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=1920&h=1080" alt="" class="w-full h-full object-cover">
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark to-gray-900 z-0 opacity-90"></div>
-
+    <section id="contact" class="py-24 relative overflow-hidden bg-brand-yellow">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center fade-in">
-            <h2 class="text-4xl md:text-5xl font-black mb-6">まずは あなたの「想い」を<br>お聞かせください</h2>
-            <p class="text-xl text-gray-300 mb-10">
-                「こんなことできるかな？」「予算はこれくらいなんだけど…」<br>
-                どんな些細なことでも構いません 廣瀬が親身になってご相談に乗ります
+            <h2 class="text-4xl md:text-5xl font-black mb-6">まずは あなたの「想い」を<br>お聞かせください！</h2>
+            <p class="text-xl font-bold text-brand-dark mb-10 bg-white inline-block px-6 py-3 rounded-full border-4 border-brand-dark pop-shadow transform rotate-1">
+                「こんなことできるかな？」「予算はこれくらい…」<br>
+                どんな些細なことでも 廣瀬が親身に相談に乗ります！
             </p>
             
-            <form class="bg-brand-dark/80 backdrop-blur p-8 rounded-2xl border border-gray-700 text-left shadow-2xl" onsubmit="event.preventDefault(); alert('実際の環境ではここからメール送信等の処理を行います');">
+            <form class="bg-white p-8 md:p-12 rounded-[3rem] border-8 border-brand-dark text-left pop-shadow" onsubmit="event.preventDefault(); alert('実際の環境ではここからメール送信等の処理を行います');">
                 <div class="mb-6">
-                    <label class="block text-sm font-bold mb-2 text-gray-300">お名前・団体名</label>
-                    <input type="text" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-pink focus:ring-1 focus:ring-brand-pink" placeholder="例：株式会社〇〇 / 劇団〇〇">
+                    <label class="block font-black mb-2 text-brand-dark">お名前・団体名</label>
+                    <input type="text" class="w-full bg-gray-50 border-4 border-gray-300 rounded-2xl px-4 py-3 text-brand-dark focus:outline-none focus:border-brand-pink font-bold" placeholder="例：株式会社〇〇 / 劇団〇〇">
                 </div>
                 <div class="mb-6">
-                    <label class="block text-sm font-bold mb-2 text-gray-300">メールアドレス</label>
-                    <input type="email" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-pink focus:ring-1 focus:ring-brand-pink" placeholder="info@example.com">
+                    <label class="block font-black mb-2 text-brand-dark">メールアドレス</label>
+                    <input type="email" class="w-full bg-gray-50 border-4 border-gray-300 rounded-2xl px-4 py-3 text-brand-dark focus:outline-none focus:border-brand-pink font-bold" placeholder="info@example.com">
                 </div>
-                <div class="mb-6">
-                    <label class="block text-sm font-bold mb-2 text-gray-300">ご相談内容（ざっくりで構いません）</label>
-                    <textarea rows="4" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-pink focus:ring-1 focus:ring-brand-pink" placeholder="初めてのイベント開催で 舞台進行や設営について相談したいです"></textarea>
+                <div class="mb-8">
+                    <label class="block font-black mb-2 text-brand-dark">ご相談内容（ざっくりでOK！）</label>
+                    <textarea rows="4" class="w-full bg-gray-50 border-4 border-gray-300 rounded-2xl px-4 py-3 text-brand-dark focus:outline-none focus:border-brand-pink font-bold" placeholder="初めてのイベント開催で 舞台進行や設営について相談したいです"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-brand-pink hover:bg-pink-600 text-white font-bold py-4 rounded-lg text-lg transition duration-300">
-                    無料で廣瀬に相談する
+                <button type="submit" class="w-full bg-brand-pink border-4 border-brand-dark text-white font-black py-4 rounded-full text-2xl pop-shadow btn-pop transition duration-300">
+                    無料でプロに相談する！ <i class="fas fa-paper-plane ml-2"></i>
                 </button>
             </form>
         </div>
     </section>
 
     <!-- フッター -->
-    <footer class="bg-black py-8 border-t border-gray-800">
+    <footer class="bg-white border-t-4 border-brand-dark py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="font-bold text-xl tracking-wider mb-4">
+            <div class="font-black text-2xl tracking-wider mb-2">
                 <span class="text-brand-pink">Q</span>M
             </div>
-            <p class="text-gray-600 text-xs mt-4">&copy; 2026 QM. All rights reserved.</p>
+            <p class="text-brand-dark font-bold text-sm">イベント制作デスク</p>
+            <p class="text-gray-500 font-bold text-xs mt-4">&copy; 2026 QM. All rights reserved.</p>
         </div>
     </footer>
 
